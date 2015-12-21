@@ -1,0 +1,27 @@
+#{extends 'main.html'/}
+#{set title:'Home'/}
+<head>
+</head>
+<body>
+<p>First name: <input data-bind="value: firstName" /></p>
+<p>Last name: <input data-bind="value: lastName" /></p>
+Welcome <span data-bind="text:fullName"></span>
+
+</body>
+
+<script type="text/javascript" src="@{'public/javascripts/knockout-3.4.0.js'}"></script>
+<script type="text/javascript">
+var obj={
+firstName:ko.observable('First Name'),
+lastName:ko.observable('Last Name'),
+
+};
+ obj.fullName=ko.computed(function(){
+ return obj.firstName()+' '+obj.lastName()
+ })
+ obj.firstName.subscribe(function(val){
+ console.log('someone has changed the value');
+ console.log(val);
+ })
+ko.applyBindings(obj); // This makes Knockout get to work
+</script>

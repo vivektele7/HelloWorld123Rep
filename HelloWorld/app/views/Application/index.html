@@ -1,0 +1,26 @@
+#{extends 'main.html'/}
+#{set title:'Home'/}
+<head>
+<!-- <link type="text/css" rel="stylesheet"  href="@{'/public/stylesheets/style.css'}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="@{'/public/javascripts/main.js'}"></script> -->
+</head>
+<body>
+<div class="login-form" align="center">
+
+<div align="right"><a href="ticket.html">Book ticket</a></div>
+<div align="right"><a href="Detail.html">Details</a></div>
+	<h1>Login Form</h1>
+
+	<form action="@{application.sayHello()}">
+		<input type="text" name="fName" placeholder="First Name"><br><br>
+		<input type="text" name="lName" placeholder="Last Name"><br><br>
+		<input type="text" name="email" placeholder="Email"><br><br>
+		<input type="text" name="pswd" placeholder="Password"><br><br>
+		
+		<input type="submit" value="Submit">
+	</form>
+</div>
+
+
+</body>
